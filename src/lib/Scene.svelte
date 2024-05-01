@@ -30,6 +30,11 @@
 <T.AmbientLight intensity={0.8}  />
 
 <TestBlock position.x={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white"/>
+<TestBlock position.y={3} position.x={2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white"/>
+<TestBlock position.y={3} position.x={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white"/>
+<TestBlock position.y={1} position.x={4} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white"/>
+<TestBlock position.y={1} position.x={2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white"/>
+
 <TestBlock position.x={-2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="#444"/>
 <TestBlock position.x={-3} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink"/>
 <TestBlock position.y={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink"/>
