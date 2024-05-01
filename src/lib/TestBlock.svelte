@@ -8,11 +8,12 @@ Command: npx @threlte/gltf@2.0.3 ./static/TestBlock.glb
     import { T, forwardEventHandlers } from '@threlte/core'
     import { useGltf } from '@threlte/extras'
     import {Collider, RigidBody} from "@threlte/rapier";
+    import {base} from "$app/paths";
 
     export let color;
     export const ref = new Group()
 
-    const gltf = useGltf('/TestBlock.glb')
+    const gltf = useGltf(`${base}/TestBlock.glb`)
 
     const component = forwardEventHandlers()
 

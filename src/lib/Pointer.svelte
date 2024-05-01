@@ -26,7 +26,7 @@
 
 
     useTask((delta) => {
-		let { x, y }= {x: mouse.x - ($size.width/2), y: mouse.y - ($size.height/2)}
+		let { x, y }= {x: mouse.x - ($size.width/2), y: mouse.y - ($size.height)}
 		RigidRef.setNextKinematicTranslation({x: x/100, y: -y/100, z: 0})
         // console.log('mouse', mouse)
         // console.log($size)
