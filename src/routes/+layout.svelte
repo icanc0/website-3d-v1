@@ -1,16 +1,14 @@
 <style>
     body {
-        background-color: rgb(100 100 100);
+        background-color: rgb(240 240 250);
     }
 </style>
 <script>
     import "../index.css"
 </script>
 
-<body class="h-screen">
-    <div class="border-2 rounded-2xl p-5 h-full">
+<body class="h-screen p-5 object-cover">
         <slot>
 
         </slot>
-    </div>
 </body>

@@ -27,7 +27,7 @@
 
     useTask((delta) => {
 		let { x, y }= {x: mouse.x - ($size.width/2), y: mouse.y - ($size.height/2)}
-		RigidRef.setNextKinematicTranslation({x: x/50, y: -y/50, z: 0})
+		RigidRef.setNextKinematicTranslation({x: x/100, y: -y/100, z: 0})
         // console.log('mouse', mouse)
         // console.log($size)
     })
@@ -44,7 +44,7 @@
 
 <T.Group >
     <RigidBody type="kinematicPosition" bind:rigidBody={RigidRef}>
-        <Collider shape="ball" args={[1]} mass={0.01}>
+        <Collider shape="ball" args={[0.5]} mass={0.01}>
 
         </Collider>
     </RigidBody>

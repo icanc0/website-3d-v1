@@ -7,35 +7,40 @@
 </script>
 
 <T.PerspectiveCamera
+        fov={17.5}
+        near={1}
+        far={20}
         makeDefault
         position={[0, 0, 15]}
         on:create={({ ref }) => {
     ref.lookAt(0, 0, 0)
   }}
 />
-<T.DirectionalLight position={[10, 10, 10]}  intensity={1} castShadow />
+<!--<T.DirectionalLight position={[10, 10, 10]}  intensity={1} castShadow />-->
 
 <T.Group rotation={[Math.PI / 3, 0, 1]}>
-    <T.SpotLight position={[0, 5, -9]}  intensity={100} angle={Math.PI/2} castShadow/>
-    <T.SpotLight position={[-5, 1, -1]} intensity={100} castShadow/>
-    <T.SpotLight position={[-5, -1, -1]} intensity={100} castShadow/>
-    <T.SpotLight position={[10, 1, 0]} intensity={100} castShadow/>
+    <T.SpotLight position={[10, 10, 10]}  intensity={400} castShadow={true} penumbra={1} angle={0.15}/>
+
+    <T.SpotLight position={[0, 5, -9]}  intensity={50} castShadow={true}/>
+    <T.SpotLight position={[-5, 1, -1]} intensity={50} castShadow={true}/>
+    <T.SpotLight position={[-5, -1, -1]} intensity={50} castShadow={true}/>
+    <T.SpotLight position={[10, 1, 0]} intensity={50} castShadow={true}/>
 </T.Group>
 
-<T.AmbientLight intensity={0.5}  />
+<T.AmbientLight intensity={0.8}  />
 
-<TestBlock position.x={-1} scale={2} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3}/>
-<TestBlock position.x={-2} scale={2} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3}/>
-<TestBlock position.x={-3} scale={2} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3}/>
-<TestBlock position.y={-1} scale={2} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3}/>
-<TestBlock position.y={-2} scale={2} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3}/>
-<TestBlock position.y={-3} scale={2} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3}/>
+<TestBlock position.x={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white"/>
+<TestBlock position.x={-2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="#444"/>
+<TestBlock position.x={-3} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink"/>
+<TestBlock position.y={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink"/>
+<TestBlock position.y={-2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink"/>
+<TestBlock position.y={-3} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink"/>
 
 <Pointer></Pointer>
 
 <Attractor
         range={1000}
-        strength={50}
+        strength={2}
         position={[0, 0, 0]}
 
 />
