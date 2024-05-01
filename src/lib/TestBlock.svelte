@@ -10,7 +10,7 @@ Command: npx @threlte/gltf@2.0.3 ./static/TestBlock.glb
     import {Collider, RigidBody} from "@threlte/rapier";
     import {base} from "$app/paths";
 
-    export let color;
+    export let color, roughtness
     export const ref = new Group()
 
     const gltf = useGltf(`${base}/TestBlock.glb`)
@@ -28,7 +28,7 @@ Command: npx @threlte/gltf@2.0.3 ./static/TestBlock.glb
             <Collider shape="cuboid" args={[1.27, 0.38, 0.38]} friction={0.1}/>
             <Collider shape="cuboid" args={[0.38, 0.38, 1.27]} friction={0.1}/>
             <T.Mesh geometry={gltf.nodes.connector.geometry} material={gltf.materials.base} scale={10} >
-                <T.MeshStandardMaterial color={color} roughness={0.1} />
+                <T.MeshStandardMaterial color={color} roughness={roughtness} />
             </T.Mesh>
         </RigidBody>
 

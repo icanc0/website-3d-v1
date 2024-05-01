@@ -29,17 +29,17 @@
 
 <T.AmbientLight intensity={0.8}  />
 
-<TestBlock position.x={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white"/>
-<TestBlock position.y={3} position.x={2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white"/>
-<TestBlock position.y={3} position.x={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white"/>
-<TestBlock position.y={1} position.x={4} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white"/>
-<TestBlock position.y={1} position.x={2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white"/>
+<TestBlock position.x={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughtness={0.2}/>
+<TestBlock position.y={3} position.x={2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughtness={0.2}/>
+<TestBlock position.y={3} position.x={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughtness={0.8}/>
+<TestBlock position.y={1} position.x={4} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughtness={0.6}/>
+<TestBlock position.y={1} position.x={2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughtness={1}/>
 
-<TestBlock position.x={-2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="#444"/>
-<TestBlock position.x={-3} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink"/>
-<TestBlock position.y={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink"/>
-<TestBlock position.y={-2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink"/>
-<TestBlock position.y={-3} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink"/>
+<TestBlock position.x={-2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="#444" roughtness={0}/>
+<TestBlock position.x={-3} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughtness={0}/>
+<TestBlock position.y={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughtness={0}/>
+<TestBlock position.y={-2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughtness={1}/>
+<TestBlock position.y={-3} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughtness={1}/>
 
 <Pointer></Pointer>
 
