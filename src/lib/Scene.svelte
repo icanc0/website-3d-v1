@@ -3,6 +3,7 @@
     import TestBlock from "$lib/TestBlock.svelte";
     import {Attractor} from "@threlte/rapier";
     import Pointer from "$lib/Pointer.svelte";
+    import {RoundedBoxGeometry} from "@threlte/extras";
 
 </script>
 
@@ -29,17 +30,17 @@
 
 <T.AmbientLight intensity={0.8}  />
 
-<TestBlock position.x={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughtness={0.2}/>
-<TestBlock position.y={3} position.x={2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughtness={0.2}/>
-<TestBlock position.y={3} position.x={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughtness={0.8}/>
-<TestBlock position.y={1} position.x={4} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughtness={0.6}/>
-<TestBlock position.y={1} position.x={2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughtness={1}/>
+<TestBlock position.x={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughness={0.2}/>
+<TestBlock position.y={3} position.x={2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughness={0.2}/>
+<TestBlock position.y={3} position.x={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughness={0.1}/>
+<TestBlock position.y={1} position.x={4} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughness={0.1}/>
+<TestBlock position.y={1} position.x={2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughness={1}/>
 
-<TestBlock position.x={-2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="#444" roughtness={0}/>
-<TestBlock position.x={-3} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughtness={0}/>
-<TestBlock position.y={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughtness={0}/>
-<TestBlock position.y={-2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughtness={1}/>
-<TestBlock position.y={-3} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughtness={1}/>
+<TestBlock position.x={-2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="#444" roughness={0}/>
+<TestBlock position.x={-3} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughness={0}/>
+<TestBlock position.y={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughness={0}/>
+<TestBlock position.y={-2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughness={0}/>
+<TestBlock position.y={-3} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughness={1}/>
 
 <Pointer></Pointer>
 
@@ -49,3 +50,4 @@
         position={[0, 0, 0]}
 
 />
+

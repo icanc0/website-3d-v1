@@ -1,46 +1,15 @@
 <script lang="ts">
-
 	import {T, useTask, useThrelte} from '@threlte/core';
 	import {Collider, RigidBody} from "@threlte/rapier";
 	import {Group} from "three";
-	import {onMount} from "svelte";
+	import {interactivity} from "@threlte/extras";
 
 	let RigidRef: RigidBody
 
-	interface MousePosition {
-		x: number;
-		y: number;
-	}
+	interactivity()
 
-    let mouse: MousePosition = {x:0,y:0}
-
-    onMount(() => {
-        console.log('mounted')
-		document.addEventListener('mousemove', (e) => {
-			mouse.x = e.clientX;
-			mouse.y = e.clientY;
-		});
-    })
-
-    const { size } = useThrelte()
-
-
-    useTask((delta) => {
-		let { x, y }= {x: mouse.x - ($size.width/2), y: mouse.y - ($size.height/1.5)}
-		RigidRef.setNextKinematicTranslation({x: x/100, y: -y/100, z: 0})
-        // console.log('mouse', mouse)
-        // console.log($size)
-    })
-
-
-	$: console.log(RigidRef!)
 </script>
 
-
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<div  >
-
-</div>
 
 <T.Group >
     <RigidBody type="kinematicPosition" bind:rigidBody={RigidRef}>
@@ -48,5 +17,12 @@
 
         </Collider>
     </RigidBody>
-
 </T.Group>
+
+<T.Mesh
+    visible={false}
+    on:pointermove={(e) => RigidRef.setNextKinematicTranslation({x: e.point.x, y: e.point.y, z: 0})}
+>
+    <T.BoxGeometry args={[20, 20, 0.1]} />
+    <T.MeshBasicMaterial />
+</T.Mesh>
