@@ -23,6 +23,7 @@
     visible={false}
     on:pointermove={(e) => RigidRef.setNextKinematicTranslation({x: e.point.x, y: e.point.y, z: 0})}
 >
+
     <T.BoxGeometry args={[20, 20, 0.1]} />
     <T.MeshBasicMaterial />
 </T.Mesh>

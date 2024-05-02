@@ -1,9 +1,25 @@
-<script>
+<script lang="ts">
     import { T } from '@threlte/core'
-    import TestBlock from "$lib/TestBlock.svelte";
     import {Attractor} from "@threlte/rapier";
     import Pointer from "$lib/Pointer.svelte";
-    import {RoundedBoxGeometry} from "@threlte/extras";
+    import type {blockConfig} from "$lib/index";
+	import {Color, Vector2, Vector3} from "three";
+	import BlockGroup from "$lib/BlockGroup.svelte";
+
+
+	let blocks: blockConfig[] = [
+		{color: new Color("white"), metalness: 0, roughness: 0.2, scale: 1, position: new Vector3(-1, 0, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+		{color: new Color("white"), metalness: 0, roughness: 0.2, scale: 1, position: new Vector3(2, 3, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+		{color: new Color("white"), metalness: 0, roughness: 0.1, scale: 1, position: new Vector3(-1, 3, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+		{color: new Color("white"), metalness: 0, roughness: 0.1, scale: 1, position: new Vector3(4, 1, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+		{color: new Color("white"), metalness: 0, roughness: 1, scale: 1, position: new Vector3(2, 1, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+		{color: new Color("#444"), metalness: 0, roughness: 0, scale: 1, position: new Vector3(-2, 0, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+		{color: new Color("hotpink"), metalness: 0, roughness: 0, scale: 1, position: new Vector3(-3, 0, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+		{color: new Color("hotpink"), metalness: 0, roughness: 0, scale: 1, position: new Vector3(0, -1, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+		{color: new Color("hotpink"), metalness: 0, roughness: 0, scale: 1, position: new Vector3(0, -2, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+		{color: new Color("hotpink"), metalness: 0, roughness: 1, scale: 1, position: new Vector3(0, -3, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+	];
+
 
 </script>
 
@@ -30,17 +46,7 @@
 
 <T.AmbientLight intensity={0.8}  />
 
-<TestBlock position.x={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughness={0.2}/>
-<TestBlock position.y={3} position.x={2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughness={0.2}/>
-<TestBlock position.y={3} position.x={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughness={0.1}/>
-<TestBlock position.y={1} position.x={4} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughness={0.1}/>
-<TestBlock position.y={1} position.x={2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="white" roughness={1}/>
-
-<TestBlock position.x={-2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="#444" roughness={0}/>
-<TestBlock position.x={-3} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughness={0}/>
-<TestBlock position.y={-1} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughness={0}/>
-<TestBlock position.y={-2} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughness={0}/>
-<TestBlock position.y={-3} scale={1} rotation.y={Math.PI / 3} rotation.x={Math.PI / 3} color="hotpink" roughness={1}/>
+<BlockGroup configs={blocks} />
 
 <Pointer></Pointer>
 
