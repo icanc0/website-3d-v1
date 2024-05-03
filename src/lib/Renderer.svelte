@@ -23,17 +23,10 @@
 
 		const n8aopass = new N8AOPostPass(scene, camera, $size.width, $size.height);
         n8aopass.configuration.aoSamples = 8;
-		// n8aopass.configuration.denoiseSamples = 8;
-		// n8aopass.configuration.denoiseRadius = 8;
 		n8aopass.configuration.aoRadius = 1.0;
 		n8aopass.configuration.distanceFalloff = 1.0;
 		n8aopass.configuration.intensity = 4;
-		// n8aopass.configuration.screenSpaceRadius = true;
-		// n8aopass.configuration.color = new Color(100, 100, 0);
-		// n8aopass.setDisplayMode('AO');
-		// n8aopass.setQualityMode('Medium');
-		// n8aopass.setDisplayMode('Split AO');
-		// n8aopass.enableDebugMode();
+
 		composer.addPass(n8aopass);
 		composer.addPass(
 			new EffectPass(

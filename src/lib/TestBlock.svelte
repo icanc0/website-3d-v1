@@ -12,7 +12,6 @@ Command: npx @threlte/gltf@2.0.3 ./static/TestBlock.glb
 
     export let config: blockConfig;
     export const ref = new Group()
-
     const gltf = useGltf(`${base}/TestBlock.glb`)
     const component = forwardEventHandlers()
 
@@ -26,12 +25,11 @@ Command: npx @threlte/gltf@2.0.3 ./static/TestBlock.glb
             <Collider shape="cuboid" args={[0.38, 1.27, 0.38]} friction={0.1}/>
             <Collider shape="cuboid" args={[1.27, 0.38, 0.38]} friction={0.1}/>
             <Collider shape="cuboid" args={[0.38, 0.38, 1.27]} friction={0.1}/>
-            <T.Mesh geometry={gltf.nodes.connector.geometry} material={gltf.materials.base} scale={10} >
+            <T.Mesh geometry={gltf.nodes.connector.geometry} scale={10} >
                 <T.MeshStandardMaterial
                         color={config.color}
                         roughness={config.roughness}
-                        metalness={config.metalness? config.metalness : 0.5}
-
+                        metalness={config.metalness}
                 />
             </T.Mesh>
         </RigidBody>

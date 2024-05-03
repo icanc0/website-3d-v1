@@ -6,20 +6,22 @@
 	import {Color, Vector2, Vector3} from "three";
 	import BlockGroup from "$lib/BlockGroup.svelte";
 
+	import {colorIndex, colors} from "$lib/index";
 
-	let blocks: blockConfig[] = [
+	let blocks: (index: number) => blockConfig[]
+
+    blocks = (index = 0) => { return [
 		{color: new Color("white"), metalness: 0, roughness: 0.2, scale: 1, position: new Vector3(-1, 0, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
 		{color: new Color("white"), metalness: 0, roughness: 0.2, scale: 1, position: new Vector3(2, 3, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
 		{color: new Color("white"), metalness: 0, roughness: 0.1, scale: 1, position: new Vector3(-1, 3, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
 		{color: new Color("white"), metalness: 0, roughness: 0.1, scale: 1, position: new Vector3(4, 1, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
 		{color: new Color("white"), metalness: 0, roughness: 1, scale: 1, position: new Vector3(2, 1, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
 		{color: new Color("#444"), metalness: 0, roughness: 0, scale: 1, position: new Vector3(-2, 0, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-		{color: new Color("hotpink"), metalness: 0, roughness: 0, scale: 1, position: new Vector3(-3, 0, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-		{color: new Color("hotpink"), metalness: 0, roughness: 0, scale: 1, position: new Vector3(0, -1, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-		{color: new Color("hotpink"), metalness: 0, roughness: 0, scale: 1, position: new Vector3(0, -2, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-		{color: new Color("hotpink"), metalness: 0, roughness: 1, scale: 1, position: new Vector3(0, -3, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-	];
-
+		{color: new Color(colors[index]), metalness: 0, roughness: 0, scale: 1, position: new Vector3(-3, 0, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+		{color: new Color(colors[index]), metalness: 0, roughness: 0, scale: 1, position: new Vector3(0, -1, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+		{color: new Color(colors[index]), metalness: 0, roughness: 0, scale: 1, position: new Vector3(0, -2, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+		{color: new Color(colors[index]), metalness: 0, roughness: 1, scale: 1, position: new Vector3(0, -3, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
+	]}
 
 </script>
 
@@ -46,7 +48,7 @@
 
 <T.AmbientLight intensity={0.8}  />
 
-<BlockGroup configs={blocks} />
+<BlockGroup configs={blocks($colorIndex)} />
 
 <Pointer></Pointer>
 
@@ -54,6 +56,5 @@
         range={1000}
         strength={2}
         position={[0, 0, 0]}
-
 />
 
