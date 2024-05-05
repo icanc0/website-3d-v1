@@ -3,25 +3,27 @@
     import {Attractor} from "@threlte/rapier";
     import Pointer from "$lib/Pointer.svelte";
     import type {blockConfig} from "$lib/index";
-	import {Color, Vector2, Vector3} from "three";
+	import {Color, Vector3} from "three";
 	import BlockGroup from "$lib/BlockGroup.svelte";
 
 	import {colorIndex, colors} from "$lib/index";
 
 	let blocks: (index: number) => blockConfig[]
 
-    blocks = (index = 0) => { return [
-		{color: new Color("white"), metalness: 0, roughness: 0.2, scale: 1, position: new Vector3(-1, 0, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-		{color: new Color("white"), metalness: 0, roughness: 0.2, scale: 1, position: new Vector3(2, 3, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-		{color: new Color("white"), metalness: 0, roughness: 0.1, scale: 1, position: new Vector3(-1, 3, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-		{color: new Color("white"), metalness: 0, roughness: 0.1, scale: 1, position: new Vector3(4, 1, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-		{color: new Color("white"), metalness: 0, roughness: 1, scale: 1, position: new Vector3(2, 1, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-		{color: new Color("#444"), metalness: 0, roughness: 0, scale: 1, position: new Vector3(-2, 0, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-		{color: new Color(colors[index]), metalness: 0, roughness: 0, scale: 1, position: new Vector3(-3, 0, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-		{color: new Color(colors[index]), metalness: 0, roughness: 0, scale: 1, position: new Vector3(0, -1, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-		{color: new Color(colors[index]), metalness: 0, roughness: 0, scale: 1, position: new Vector3(0, -2, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-		{color: new Color(colors[index]), metalness: 0, roughness: 1, scale: 1, position: new Vector3(0, -3, 0), rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0)},
-	]}
+	blocks = (index = 0) => {
+		return [
+			{ position: new Vector3(-1, 0, 0), color: new Color("white"), metalness: 0, roughness: 0.2, scale: 1, rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0) },
+			{ position: new Vector3(2, 3, 0), color: new Color("white"), metalness: 0, roughness: 0.2, scale: 1, rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0) },
+			{ position: new Vector3(2, 3, 0), color: new Color("white"), metalness: 0, roughness: 0.1, scale: 1, rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0) },
+			{ position: new Vector3(2, 1, 0), color: new Color("white"), metalness: 0, roughness: 0.1, scale: 1, rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0) },
+			{ position: new Vector3(2, 1, 0), color: new Color("white"), metalness: 0, roughness: 1, scale: 1, rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0) },
+			{ position: new Vector3(-2, 0, 0), color: new Color("#444"), metalness: 0, roughness: 0, scale: 1, rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0) },
+			{ position: new Vector3(-2, 0, 0), color: new Color(colors[index]), metalness: 0, roughness: 0, scale: 1, rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0) },
+			{ position: new Vector3(0, -1, 0), color: new Color(colors[index]), metalness: 0, roughness: 0, scale: 1, rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0) },
+			{ position: new Vector3(0, -1, 0), color: new Color(colors[index]), metalness: 0, roughness: 0, scale: 1, rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0) },
+			{ position: new Vector3(0, -1, 0), color: new Color(colors[index]), metalness: 0, roughness: 1, scale: 1, rotation: new Vector3(Math.PI / 3, Math.PI / 3, 0) }
+		];
+	};
 
 </script>
 

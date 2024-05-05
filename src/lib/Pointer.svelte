@@ -1,19 +1,20 @@
 <script lang="ts">
-	import {T, useTask, useThrelte} from '@threlte/core';
+	import {forwardEventHandlers, T} from '@threlte/core';
 	import {Collider, RigidBody} from "@threlte/rapier";
 	import {Group} from "three";
 	import {interactivity} from "@threlte/extras";
-	import { colorIndex} from "$lib/index";
+	import {colorIndex, PointerRef} from "$lib/index";
 	import {colors} from "$lib/index";
 
-	let RigidRef: RigidBody
+	const component = forwardEventHandlers();
 
 	interactivity()
 
 </script>
 
-<T.Group >
-    <RigidBody type="kinematicPosition" bind:rigidBody={RigidRef}>
+<T.Group bind:this={$component} >
+
+    <RigidBody type="kinematicPosition" bind:rigidBody={$PointerRef} >
         <Collider shape="ball" args={[0.5]} mass={0.01}>
 
         </Collider>
@@ -21,9 +22,8 @@
 </T.Group>
 
 <T.Mesh
-    visible={false}
-    on:pointermove={(e) => RigidRef.setNextKinematicTranslation({x: e.point.x, y: e.point.y, z: 0})}
-    on:pointerdown={(e) => colorIndex.set(($colorIndex + 1) % colors.length)}
+        visible={false}
+        on:pointermove={(e) => $PointerRef.setNextKinematicTranslation({x: e.point.x, y: e.point.y, z: 0})}
 >
 
     <T.BoxGeometry args={[20, 20, 0.1]} />
